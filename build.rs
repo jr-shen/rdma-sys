@@ -34,6 +34,13 @@ fn main() {
     }
 
     {
+        let lib_name = "libmlx5";
+        let pkg_name = "libmlx5-dev";
+        let version = "1.24.43";
+        link_rdma_core(lib_name, pkg_name, version, &mut include_paths);
+    }
+
+    {
         include_paths.sort_unstable();
         include_paths.dedup_by(|x, first| x == first);
         include_paths.push("/usr/include".into());
